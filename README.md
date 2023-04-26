@@ -43,6 +43,13 @@ val result = validation.validate(org)
 result.errors.forEach { println(it) }
 ```
 
+This would print
+```text
+ValidationError(propertyPath=name, errorMessage=must be at least 5 characters)
+ValidationError(propertyPath=employees[0].name, errorMessage=must be at least 10 characters)
+ValidationError(propertyPath=employees[1].email, errorMessage=must be a valid email)
+```
+
 ## Context-aware and conditional validation
 Validk provides the ability to access the object being validated using the `withValue` construct.
 ```kotlin
@@ -103,11 +110,4 @@ validation<Person> {
         matches("[a-zA-Z\\s]+") message "Letters only please"
     }
 }
-```
-
-This would print
-```text
-ValidationError(propertyPath=name, errorMessage=must be at least 5 characters)
-ValidationError(propertyPath=employees[0].name, errorMessage=must be at least 10 characters)
-ValidationError(propertyPath=employees[1].email, errorMessage=must be a valid email)
 ```
