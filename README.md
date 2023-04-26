@@ -13,6 +13,7 @@ implementation "io.resoluteworks:validk:${validkVersion}"
 ```
 
 ## The basics
+Please check the [documentation](https://cosmin-marginean.github.io/validk/dokka/validk/validk/io.validk/index.html) for a full list of constraints/checks.
 ```kotlin
 data class Employee(
     val name: String,
