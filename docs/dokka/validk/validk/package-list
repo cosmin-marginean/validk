@@ -1,0 +1,57 @@
+$dokka.format:html-v1
+$dokka.linkExtension:html
+$dokka.location:io.validk////PointingToDeclaration/validk/io.validk/index.html
+$dokka.location:io.validk//eagerErrors/kotlin.collections.List[io.validk.ValidationError]#/PointingToDeclaration/validk/io.validk/eager-errors.html
+$dokka.location:io.validk//email/io.validk.Validation[kotlin.String]#/PointingToDeclaration/validk/io.validk/email.html
+$dokka.location:io.validk//enum/io.validk.Validation[kotlin.String]#/PointingToDeclaration/validk/io.validk/enum.html
+$dokka.location:io.validk//enum/io.validk.Validation[kotlin.String]#kotlin.Array[kotlin.String]/PointingToDeclaration/validk/io.validk/enum.html
+$dokka.location:io.validk//matches/io.validk.Validation[kotlin.String]#kotlin.String/PointingToDeclaration/validk/io.validk/matches.html
+$dokka.location:io.validk//matches/io.validk.Validation[kotlin.String]#kotlin.text.Regex/PointingToDeclaration/validk/io.validk/matches.html
+$dokka.location:io.validk//max/io.validk.Validation[TypeParam(bounds=[kotlin.Number])]#kotlin.Number/PointingToDeclaration/validk/io.validk/max.html
+$dokka.location:io.validk//maxExclusive/io.validk.Validation[TypeParam(bounds=[kotlin.Number])]#kotlin.Number/PointingToDeclaration/validk/io.validk/max-exclusive.html
+$dokka.location:io.validk//maxLength/io.validk.Validation[kotlin.String]#kotlin.Int/PointingToDeclaration/validk/io.validk/max-length.html
+$dokka.location:io.validk//maxSize/io.validk.Validation[kotlin.collections.Collection[*]]#kotlin.Int/PointingToDeclaration/validk/io.validk/max-size.html
+$dokka.location:io.validk//min/io.validk.Validation[TypeParam(bounds=[kotlin.Number])]#kotlin.Number/PointingToDeclaration/validk/io.validk/min.html
+$dokka.location:io.validk//minExclusive/io.validk.Validation[TypeParam(bounds=[kotlin.Number])]#kotlin.Number/PointingToDeclaration/validk/io.validk/min-exclusive.html
+$dokka.location:io.validk//minLength/io.validk.Validation[kotlin.String]#kotlin.Int/PointingToDeclaration/validk/io.validk/min-length.html
+$dokka.location:io.validk//minSize/io.validk.Validation[kotlin.collections.Collection[*]]#kotlin.Int/PointingToDeclaration/validk/io.validk/min-size.html
+$dokka.location:io.validk//notBlank/io.validk.Validation[kotlin.String]#/PointingToDeclaration/validk/io.validk/not-blank.html
+$dokka.location:io.validk//notEmpty/io.validk.Validation[kotlin.String]#/PointingToDeclaration/validk/io.validk/not-empty.html
+$dokka.location:io.validk//notEmptyCollection/io.validk.Validation[kotlin.collections.Collection[*]]#/PointingToDeclaration/validk/io.validk/not-empty-collection.html
+$dokka.location:io.validk//validate/TypeParam(bounds=[kotlin.Any?])#kotlin.Function1[io.validk.Validation[TypeParam(bounds=[kotlin.Any?])],kotlin.Unit]/PointingToDeclaration/validk/io.validk/validate.html
+$dokka.location:io.validk//validation/#kotlin.Function1[io.validk.Validation[TypeParam(bounds=[kotlin.Any?])],kotlin.Unit]/PointingToDeclaration/validk/io.validk/validation.html
+$dokka.location:io.validk/Constraint///PointingToDeclaration/validk/io.validk/-constraint/index.html
+$dokka.location:io.validk/Constraint/Constraint/#kotlin.String#kotlin.Function1[TypeParam(bounds=[kotlin.Any?]),kotlin.Boolean]/PointingToDeclaration/validk/io.validk/-constraint/-constraint.html
+$dokka.location:io.validk/Constraint/errorMessage/#/PointingToDeclaration/validk/io.validk/-constraint/error-message.html
+$dokka.location:io.validk/Constraint/test/#/PointingToDeclaration/validk/io.validk/-constraint/test.html
+$dokka.location:io.validk/ValidObject///PointingToDeclaration/validk/io.validk/-valid-object/index.html
+$dokka.location:io.validk/ValidObject/validate/#/PointingToDeclaration/validk/io.validk/-valid-object/validate.html
+$dokka.location:io.validk/ValidObject/validation/#/PointingToDeclaration/validk/io.validk/-valid-object/validation.html
+$dokka.location:io.validk/Validation.Companion///PointingToDeclaration/validk/io.validk/-validation/-companion/index.html
+$dokka.location:io.validk/Validation.Companion/DEFAULT_NULL_MESSAGE/#/PointingToDeclaration/validk/io.validk/-validation/-companion/-d-e-f-a-u-l-t_-n-u-l-l_-m-e-s-s-a-g-e.html
+$dokka.location:io.validk/Validation///PointingToDeclaration/validk/io.validk/-validation/index.html
+$dokka.location:io.validk/Validation/Validation/#kotlin.String?#kotlin.String#kotlin.Boolean/PointingToDeclaration/validk/io.validk/-validation/-validation.html
+$dokka.location:io.validk/Validation/addConstraint/#kotlin.String#kotlin.Function1[TypeParam(bounds=[kotlin.Any?]),kotlin.Boolean]/PointingToDeclaration/validk/io.validk/-validation/add-constraint.html
+$dokka.location:io.validk/Validation/each/kotlin.reflect.KProperty1[TypeParam(bounds=[kotlin.Any?]),TypeParam(bounds=[kotlin.collections.Collection[TypeParam(bounds=[kotlin.Any?])]])]#kotlin.Function1[io.validk.Validation[TypeParam(bounds=[kotlin.Any?])],kotlin.Unit]/PointingToDeclaration/validk/io.validk/-validation/each.html
+$dokka.location:io.validk/Validation/ifNotNull/kotlin.reflect.KProperty1[TypeParam(bounds=[kotlin.Any?]),TypeParam(bounds=[kotlin.Any?])?]#kotlin.Function1[io.validk.Validation[TypeParam(bounds=[kotlin.Any?])],kotlin.Unit]/PointingToDeclaration/validk/io.validk/-validation/if-not-null.html
+$dokka.location:io.validk/Validation/invoke/kotlin.reflect.KProperty1[TypeParam(bounds=[kotlin.Any?]),TypeParam(bounds=[kotlin.Any?])]#kotlin.Function1[io.validk.Validation[TypeParam(bounds=[kotlin.Any?])],kotlin.Unit]/PointingToDeclaration/validk/io.validk/-validation/invoke.html
+$dokka.location:io.validk/Validation/message/io.validk.Constraint[TypeParam(bounds=[kotlin.Any?])]#kotlin.String/PointingToDeclaration/validk/io.validk/-validation/message.html
+$dokka.location:io.validk/Validation/notNull/kotlin.reflect.KProperty1[TypeParam(bounds=[kotlin.Any?]),TypeParam(bounds=[kotlin.Any?])?]#kotlin.Function1[io.validk.Validation[TypeParam(bounds=[kotlin.Any?])],kotlin.Unit]/PointingToDeclaration/validk/io.validk/-validation/not-null.html
+$dokka.location:io.validk/Validation/notNull/kotlin.reflect.KProperty1[TypeParam(bounds=[kotlin.Any?]),TypeParam(bounds=[kotlin.Any?])?]#kotlin.String#kotlin.Function1[io.validk.Validation[TypeParam(bounds=[kotlin.Any?])],kotlin.Unit]/PointingToDeclaration/validk/io.validk/-validation/not-null.html
+$dokka.location:io.validk/Validation/validate/#TypeParam(bounds=[kotlin.Any?])?/PointingToDeclaration/validk/io.validk/-validation/validate.html
+$dokka.location:io.validk/Validation/whenIs/kotlin.reflect.KProperty1[TypeParam(bounds=[kotlin.Any?]),TypeParam(bounds=[kotlin.Any?])]#TypeParam(bounds=[kotlin.Any?])#kotlin.Function2[io.validk.Validation[TypeParam(bounds=[kotlin.Any?])],TypeParam(bounds=[kotlin.Any?]),kotlin.Unit]/PointingToDeclaration/validk/io.validk/-validation/when-is.html
+$dokka.location:io.validk/Validation/withValue/#kotlin.Function2[io.validk.Validation[TypeParam(bounds=[kotlin.Any?])],TypeParam(bounds=[kotlin.Any?]),kotlin.Unit]/PointingToDeclaration/validk/io.validk/-validation/with-value.html
+$dokka.location:io.validk/ValidationError.Companion///PointingToDeclaration/validk/io.validk/-validation-error/-companion/index.html
+$dokka.location:io.validk/ValidationError///PointingToDeclaration/validk/io.validk/-validation-error/index.html
+$dokka.location:io.validk/ValidationError/ValidationError/#kotlin.String#kotlin.String/PointingToDeclaration/validk/io.validk/-validation-error/-validation-error.html
+$dokka.location:io.validk/ValidationError/errorMessage/#/PointingToDeclaration/validk/io.validk/-validation-error/error-message.html
+$dokka.location:io.validk/ValidationError/propertyPath/#/PointingToDeclaration/validk/io.validk/-validation-error/property-path.html
+$dokka.location:io.validk/ValidationResult///PointingToDeclaration/validk/io.validk/-validation-result/index.html
+$dokka.location:io.validk/ValidationResult/ValidationResult/#kotlin.String#kotlin.String/PointingToDeclaration/validk/io.validk/-validation-result/-validation-result.html
+$dokka.location:io.validk/ValidationResult/ValidationResult/#kotlin.collections.List[io.validk.ValidationError]/PointingToDeclaration/validk/io.validk/-validation-result/-validation-result.html
+$dokka.location:io.validk/ValidationResult/eagerErrors/#/PointingToDeclaration/validk/io.validk/-validation-result/eager-errors.html
+$dokka.location:io.validk/ValidationResult/errors/#/PointingToDeclaration/validk/io.validk/-validation-result/errors.html
+$dokka.location:io.validk/ValidationResult/failedProperties/#/PointingToDeclaration/validk/io.validk/-validation-result/failed-properties.html
+$dokka.location:io.validk/ValidationResult/success/#/PointingToDeclaration/validk/io.validk/-validation-result/success.html
+io.validk
+
