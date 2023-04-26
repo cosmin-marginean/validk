@@ -3,9 +3,11 @@
 ![Coveralls](https://img.shields.io/coverallsCoverage/github/cosmin-marginean/validk)
 
 Validk is a validation framework for Kotlin (JVM), largely inspired by [Konform](https://github.com/konform-kt/konform). Among other things,
-the design aims to solve some specialised use cases like context-aware and conditional validation. Contributions are welcome.
+the design aims to solve some specialised use cases like context-aware and conditional validation.
 
-COMING SOON: Micronaut integration
+The framework provides a typesafe DSL and has zero dependencies. Contributions are welcome.
+
+**Coming soon**: Micronaut integration
 
 ## Dependency
 ```groovy
