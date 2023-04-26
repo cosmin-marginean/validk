@@ -72,7 +72,7 @@ validation<Entity> {
 }
 ```
 
-Alternatively, you can choose to add validations logic based on the value of a specific property using `whenIs`.
+Alternatively, you can add validation logic based on the value of a specific property using `whenIs`.
 ```kotlin
 val validation = validation<Entity> {
     Entity::entityType { enum<EntityType>() }
