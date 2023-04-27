@@ -7,8 +7,6 @@ the design aims to solve some specialised use cases like context-aware and condi
 
 The framework provides a typesafe DSL and has zero dependencies. Contributions are welcome.
 
-**Coming soon**: Micronaut integration
-
 ## Dependency
 ```groovy
 implementation "io.resoluteworks:validk:${validkVersion}"
