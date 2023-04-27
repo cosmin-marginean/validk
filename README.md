@@ -7,7 +7,7 @@ the design aims to solve some specialised use cases like context-aware and condi
 
 The core framework provides a typesafe DSL and has zero dependencies.
 
-An additional module enables integration with [Micronaut](https://micronaut.io/). For complete reference see [Validk Micronaut documentation](https://github.com/cosmin-marginean/validk/wiki/Integrate-Validk-with-Micronaut).
+An additional module enables integration with [Micronaut](https://micronaut.io/). For details please see [Validk Micronaut docs](https://github.com/cosmin-marginean/validk/wiki/Integrate-Validk-with-Micronaut).
 
 ## Dependency
 ```groovy
