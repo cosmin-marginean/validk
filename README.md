@@ -16,11 +16,6 @@ implementation "io.resoluteworks:validk:${validkVersion}"
 
 ## The basics
 
-Validating an object returns a `ValidationErrors` instance which is `null` when validation succeeds.
-In other words, validation is successful when the response is `null`, or an instance of `ValidationErrors` when it fails.   
-
-Please check the [tests](https://github.com/cosmin-marginean/validk/tree/main/src/test/kotlin/io/validk) for more examples and the [documentation](https://cosmin-marginean.github.io/validk/dokka/validk/validk/io.validk/index.html) for a full list of constraints.
-
 ```kotlin
 data class Employee(
     val name: String,
@@ -56,6 +51,11 @@ ValidationError(propertyPath=name, errorMessage=must be at least 5 characters)
 ValidationError(propertyPath=employees[0].name, errorMessage=must be at least 10 characters)
 ValidationError(propertyPath=employees[1].email, errorMessage=must be a valid email)
 ```
+
+Validating an object returns a `ValidationErrors` which is `null` when validation succeeds.
+In other words, validation is successful when the response is `null`, or an instance of `ValidationErrors` when it fails.   
+
+Please check the [tests](https://github.com/cosmin-marginean/validk/tree/main/src/test/kotlin/io/validk) for more examples and the [documentation](https://cosmin-marginean.github.io/validk/dokka/validk/validk/io.validk/index.html) for a full list of constraints.
 
 ## Context-aware and conditional validation
 Validk provides the ability to access the object being validated using the `withValue` construct.
