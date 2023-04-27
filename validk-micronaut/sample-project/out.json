@@ -1,0 +1,43 @@
+{
+  "errors": {
+    "errors": [
+      {
+        "propertyPath": "age",
+        "errorMessage": "Age must be at least 18"
+      },
+      {
+        "propertyPath": "email",
+        "errorMessage": "This is not a valid email"
+      }
+    ],
+    "eagerErrors": [
+      {
+        "propertyPath": "age",
+        "errorMessage": "Age must be at least 18"
+      },
+      {
+        "propertyPath": "email",
+        "errorMessage": "This is not a valid email"
+      }
+    ],
+    "errorMessages": {
+      "age": [
+        "Age must be at least 18"
+      ],
+      "email": [
+        "This is not a valid email"
+      ]
+    },
+    "eagerErrorMessages": {
+      "age": "Age must be at least 18",
+      "email": "This is not a valid email"
+    },
+    "failedProperties": [
+      "age",
+      "email"
+    ]
+  },
+  "email": "test",
+  "name": "john smith",
+  "age": 12
+}

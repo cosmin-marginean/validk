@@ -1,0 +1,25 @@
+$dokka.format:html-v1
+$dokka.linkExtension:html
+$dokka.location:io.validk.micronaut////PointingToDeclaration/validk-micronaut/io.validk.micronaut/index.html
+$dokka.location:io.validk.micronaut//badRequest/io.validk.ValidationErrors#kotlin.Any#io.validk.micronaut.ReturnBody#kotlin.String?/PointingToDeclaration/validk-micronaut/io.validk.micronaut/bad-request.html
+$dokka.location:io.validk.micronaut//badRequest/io.validk.ValidationErrors#kotlin.String#kotlin.Any#io.validk.micronaut.ReturnBody#kotlin.String?/PointingToDeclaration/validk-micronaut/io.validk.micronaut/bad-request.html
+$dokka.location:io.validk.micronaut//inject/io.validk.ValidObject[TypeParam(bounds=[kotlin.Any?])]#io.micronaut.context.ApplicationContext/PointingToDeclaration/validk-micronaut/io.validk.micronaut/inject.html
+$dokka.location:io.validk.micronaut//responseModel/io.validk.ValidationErrors#kotlin.Any#io.validk.micronaut.ReturnBody#kotlin.String?/PointingToDeclaration/validk-micronaut/io.validk.micronaut/response-model.html
+$dokka.location:io.validk.micronaut//validateRequest/io.validk.ValidObject[*]#kotlin.Function1[io.validk.ValidationErrors,io.micronaut.http.HttpResponse[*]]#kotlin.Function0[io.micronaut.http.HttpResponse[*]]/PointingToDeclaration/validk-micronaut/io.validk.micronaut/validate-request.html
+$dokka.location:io.validk.micronaut/OnValidationErrors///PointingToDeclaration/validk-micronaut/io.validk.micronaut/-on-validation-errors/index.html
+$dokka.location:io.validk.micronaut/OnValidationErrors/path/#/PointingToDeclaration/validk-micronaut/io.validk.micronaut/-on-validation-errors/path.html
+$dokka.location:io.validk.micronaut/ReturnBody.DONT_RETURN///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}validk-micronaut/io.validk.micronaut/-return-body/-d-o-n-t_-r-e-t-u-r-n/index.html
+$dokka.location:io.validk.micronaut/ReturnBody.FIELD///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}validk-micronaut/io.validk.micronaut/-return-body/-f-i-e-l-d/index.html
+$dokka.location:io.validk.micronaut/ReturnBody.ROOT///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}validk-micronaut/io.validk.micronaut/-return-body/-r-o-o-t/index.html
+$dokka.location:io.validk.micronaut/ReturnBody///PointingToDeclaration/validk-micronaut/io.validk.micronaut/-return-body/index.html
+$dokka.location:io.validk.micronaut/ReturnBody/valueOf/#kotlin.String/PointingToDeclaration/validk-micronaut/io.validk.micronaut/-return-body/value-of.html
+$dokka.location:io.validk.micronaut/ReturnBody/values/#/PointingToDeclaration/validk-micronaut/io.validk.micronaut/-return-body/values.html
+$dokka.location:io.validk.micronaut/ValidBody///PointingToDeclaration/validk-micronaut/io.validk.micronaut/-valid-body/index.html
+$dokka.location:io.validk.micronaut/ValidBody/errorView/#/PointingToDeclaration/validk-micronaut/io.validk.micronaut/-valid-body/error-view.html
+$dokka.location:io.validk.micronaut/ValidBody/returnBody/#/PointingToDeclaration/validk-micronaut/io.validk.micronaut/-valid-body/return-body.html
+$dokka.location:io.validk.micronaut/ValidBody/returnField/#/PointingToDeclaration/validk-micronaut/io.validk.micronaut/-valid-body/return-field.html
+$dokka.location:io.validk.micronaut/ValidBodyInterceptor///PointingToDeclaration/validk-micronaut/io.validk.micronaut/-valid-body-interceptor/index.html
+$dokka.location:io.validk.micronaut/ValidBodyInterceptor/ValidBodyInterceptor/#io.micronaut.context.ApplicationContext/PointingToDeclaration/validk-micronaut/io.validk.micronaut/-valid-body-interceptor/-valid-body-interceptor.html
+$dokka.location:io.validk.micronaut/ValidBodyInterceptor/intercept/#io.micronaut.aop.MethodInvocationContext[kotlin.Any,kotlin.Any]/PointingToDeclaration/validk-micronaut/io.validk.micronaut/-valid-body-interceptor/intercept.html
+io.validk.micronaut
+

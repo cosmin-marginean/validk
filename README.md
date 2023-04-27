@@ -5,7 +5,7 @@
 Validk is a validation framework for Kotlin (JVM), largely inspired by [Konform](https://github.com/konform-kt/konform). Among other things,
 the design aims to solve some specialised use cases like context-aware and conditional validation.
 
-The framework provides a typesafe DSL and has zero dependencies. Contributions are welcome.
+The framework provides a typesafe DSL and has zero dependencies. Contributions are welcome.1
 
 ## Dependency
 ```groovy
@@ -13,7 +13,12 @@ implementation "io.resoluteworks:validk:${validkVersion}"
 ```
 
 ## The basics
+
+Validating an object returns a `ValidationErrors` instance which is `null` when validation succeeds.
+In other words, validation is successful when the response is `null`, or an instance of `ValidationErrors` when it fails.   
+
 Please check the [tests](https://github.com/cosmin-marginean/validk/tree/main/src/test/kotlin/io/validk) for more examples and the [documentation](https://cosmin-marginean.github.io/validk/dokka/validk/validk/io.validk/index.html) for a full list of constraints.
+
 ```kotlin
 data class Employee(
     val name: String,
@@ -39,8 +44,8 @@ val org = Organisation(
         Employee("Hannah Johnson",  "hanna")
     )
 )
-val result = validation.validate(org)
-result.errors.forEach { println(it) }
+val errors = validation.validate(org)
+errors?.errors?.forEach { println(it) }
 ```
 
 This would print

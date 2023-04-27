@@ -1,0 +1,3 @@
+{% set formAction ="/users/create/manual-validation" %}
+{% set title ='Manual validation in Controller method' %}
+{% include "layout-create-user" %}

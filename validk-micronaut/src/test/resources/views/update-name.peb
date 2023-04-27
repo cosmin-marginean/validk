@@ -1,0 +1,11 @@
+<form action="/update" method="POST">
+    <input type="text" name="name" value="{{ name }}"/>
+    <button type="submit">Submit</button>
+    {% if errors != null %}
+        <div class="errors">
+            {% for error in errors.eagerErrors %}
+                <div>{{ error.errorMessage }}</div>
+            {% endfor %}
+        </div>
+    {% endif %}
+</form>

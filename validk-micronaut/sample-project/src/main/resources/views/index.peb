@@ -1,0 +1,12 @@
+<h2>Create user validation examples</h2>
+<ul>
+    <li>
+        <a href="/users/create">Using @ValidBody(errorView)</a> - UserController.kt
+    </li>
+    <li>
+        <a href="/users/create/custom-handler">Custom handler using @OnValidationErrors</a> - UserControllerCustomHandler.kt
+    </li>
+    <li>
+        <a href="/users/create/manual-validation">Manual validation in Controller method</a> - UserControllerManualValidation.kt
+    </li>
+</ul>

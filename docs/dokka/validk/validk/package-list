@@ -46,12 +46,13 @@ $dokka.location:io.validk/ValidationError///PointingToDeclaration/validk/io.val
 $dokka.location:io.validk/ValidationError/ValidationError/#kotlin.String#kotlin.String/PointingToDeclaration/validk/io.validk/-validation-error/-validation-error.html
 $dokka.location:io.validk/ValidationError/errorMessage/#/PointingToDeclaration/validk/io.validk/-validation-error/error-message.html
 $dokka.location:io.validk/ValidationError/propertyPath/#/PointingToDeclaration/validk/io.validk/-validation-error/property-path.html
-$dokka.location:io.validk/ValidationResult///PointingToDeclaration/validk/io.validk/-validation-result/index.html
-$dokka.location:io.validk/ValidationResult/ValidationResult/#kotlin.String#kotlin.String/PointingToDeclaration/validk/io.validk/-validation-result/-validation-result.html
-$dokka.location:io.validk/ValidationResult/ValidationResult/#kotlin.collections.List[io.validk.ValidationError]/PointingToDeclaration/validk/io.validk/-validation-result/-validation-result.html
-$dokka.location:io.validk/ValidationResult/eagerErrors/#/PointingToDeclaration/validk/io.validk/-validation-result/eager-errors.html
-$dokka.location:io.validk/ValidationResult/errors/#/PointingToDeclaration/validk/io.validk/-validation-result/errors.html
-$dokka.location:io.validk/ValidationResult/failedProperties/#/PointingToDeclaration/validk/io.validk/-validation-result/failed-properties.html
-$dokka.location:io.validk/ValidationResult/success/#/PointingToDeclaration/validk/io.validk/-validation-result/success.html
+$dokka.location:io.validk/ValidationErrors///PointingToDeclaration/validk/io.validk/-validation-errors/index.html
+$dokka.location:io.validk/ValidationErrors/ValidationErrors/#kotlin.String#kotlin.String/PointingToDeclaration/validk/io.validk/-validation-errors/-validation-errors.html
+$dokka.location:io.validk/ValidationErrors/ValidationErrors/#kotlin.collections.List[io.validk.ValidationError]/PointingToDeclaration/validk/io.validk/-validation-errors/-validation-errors.html
+$dokka.location:io.validk/ValidationErrors/eagerErrorMessages/#/PointingToDeclaration/validk/io.validk/-validation-errors/eager-error-messages.html
+$dokka.location:io.validk/ValidationErrors/eagerErrors/#/PointingToDeclaration/validk/io.validk/-validation-errors/eager-errors.html
+$dokka.location:io.validk/ValidationErrors/errorMessages/#/PointingToDeclaration/validk/io.validk/-validation-errors/error-messages.html
+$dokka.location:io.validk/ValidationErrors/errors/#/PointingToDeclaration/validk/io.validk/-validation-errors/errors.html
+$dokka.location:io.validk/ValidationErrors/failedProperties/#/PointingToDeclaration/validk/io.validk/-validation-errors/failed-properties.html
 io.validk
 

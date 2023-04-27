@@ -2,110 +2,32 @@ plugins {
     id "maven-publish"
     id "signing"
     id "com.glovoapp.semantic-versioning" version "1.1.10"
-    id "org.jetbrains.kotlin.jvm" version "${kotlinVersion}"
-    id "org.jetbrains.dokka" version "1.7.20"
-    id "jacoco"
-    id "com.github.nbaztec.coveralls-jacoco" version "1.2.15"
 }
-
-group = "io.resoluteworks"
 
 repositories {
     mavenCentral()
 }
 
-java {
-    withJavadocJar()
-    withSourcesJar()
-}
+subprojects {
+    apply plugin: 'maven-publish'
+    apply plugin: 'signing'
 
-javadocJar {
-    dependsOn(dokkaHtml)
-    archiveClassifier.set("javadoc")
-    from(dokkaHtml.outputDirectory)
-}
+    group = "io.resoluteworks"
 
-dokkaHtml {
-    outputDirectory.set(file("docs/dokka/${project.name}"))
-}
-
-dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-reflect:${kotlinVersion}"
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlinVersion}"
-    testImplementation "io.kotest:kotest-assertions-core:${kotestVersion}"
-    testImplementation "io.kotest:kotest-property:${kotestVersion}"
-    testImplementation "io.kotest:kotest-runner-junit5-jvm:${kotestVersion}"
-}
-
-kotlin {
-    jvmToolchain(17)
-}
-
-test {
-    useJUnitPlatform()
-    testLogging {
-        showStandardStreams = true
-    }
-}
-
-publishing {
-    publications {
-        mavenJava(MavenPublication) {
-            from components.java
-            pom {
-                name = 'validk'
-                description = 'A validation framework for Kotlin'
-                url = 'https://github.com/cosmin-marginean/validk'
-                licenses {
-                    license {
-                        name = 'Apache License 2.0'
-                        url = 'https://github.com/cosmin-marginean/validk/blob/main/LICENSE'
-                        distribution = 'repo'
-                    }
-                }
-                scm {
-                    url = 'https://github.com/cosmin-marginean/validk'
-                    connection = 'scm:git:git://github.com/cosmin-marginean/validk.git'
-                    developerConnection = 'scm:git:ssh://git@github.com:cosmin-marginean/validk.git'
-                }
-                developers {
-                    developer {
-                        name = 'Cosmin Marginean'
-                    }
-                }
-            }
-        }
-    }
     repositories {
-        mavenLocal()
-        maven {
-            url = 'https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/'
-            credentials {
-                username = "${NEXUS_USERNAME}"
-                password = "${NEXUS_PASSWORD}"
-            }
+        mavenCentral()
+    }
+
+    publishing {
+        repositories {
+            mavenLocal()
+//            maven {
+//                url = 'https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/'
+//                credentials {
+//                    username = "${NEXUS_USERNAME}"
+//                    password = "${NEXUS_PASSWORD}"
+//                }
+//            }
         }
     }
-}
-
-signing {
-    sign publishing.publications.mavenJava
-}
-
-jacocoTestReport {
-    reports {
-        html.required = true
-        xml.required = true
-    }
-}
-
-tasks.withType(PublishToMavenRepository) { it.dependsOn test }
-
-task fullBuild {
-    dependsOn 'clean'
-    dependsOn 'test'
-    dependsOn 'jacocoTestReport'
-    dependsOn 'coverallsJacoco'
-    tasks.findByName('jacocoTestReport').mustRunAfter 'test'
-    tasks.findByName('coverallsJacoco').mustRunAfter 'jacocoTestReport'
 }
