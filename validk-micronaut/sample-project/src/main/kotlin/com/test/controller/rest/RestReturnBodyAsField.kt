@@ -12,7 +12,7 @@ import io.validk.micronaut.ValidBody
 class RestReturnBodyAsField {
 
     @Post("/users/create/return-body-as-field")
-    @ValidBody(returnBody = ReturnBody.DONT_RETURN)
+    @ValidBody(returnBody = ReturnBody.FIELD, returnField = "submitted")
     fun createUser(@Body form: CreateUserForm): HttpResponse<*> {
         return HttpResponse.ok(mapOf("success" to true))
     }
