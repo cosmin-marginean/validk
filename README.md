@@ -5,7 +5,9 @@
 Validk is a validation framework for Kotlin (JVM), largely inspired by [Konform](https://github.com/konform-kt/konform). Among other things,
 the design aims to solve some specialised use cases like context-aware and conditional validation.
 
-The framework provides a typesafe DSL and has zero dependencies. Contributions are welcome.1
+The core framework provides a typesafe DSL and has zero dependencies.
+
+An additional module enables integration with [Micronaut](https://micronaut.io/). For details please see [Validk Micronaut docs](https://github.com/cosmin-marginean/validk/wiki/Integrate-Validk-with-Micronaut).
 
 ## Dependency
 ```groovy
@@ -13,11 +15,6 @@ implementation "io.resoluteworks:validk:${validkVersion}"
 ```
 
 ## The basics
-
-Validating an object returns a `ValidationErrors` instance which is `null` when validation succeeds.
-In other words, validation is successful when the response is `null`, or an instance of `ValidationErrors` when it fails.   
-
-Please check the [tests](https://github.com/cosmin-marginean/validk/tree/main/src/test/kotlin/io/validk) for more examples and the [documentation](https://cosmin-marginean.github.io/validk/dokka/validk/validk/io.validk/index.html) for a full list of constraints.
 
 ```kotlin
 data class Employee(
@@ -54,6 +51,12 @@ ValidationError(propertyPath=name, errorMessage=must be at least 5 characters)
 ValidationError(propertyPath=employees[0].name, errorMessage=must be at least 10 characters)
 ValidationError(propertyPath=employees[1].email, errorMessage=must be a valid email)
 ```
+
+Validating an object returns a `ValidationErrors` which is `null` when validation succeeds.
+In other words, validation is successful when the response is `null`, or an instance of `ValidationErrors` when it fails.   
+
+
+Please check the [tests](https://github.com/cosmin-marginean/validk/tree/main/validk/src/test/kotlin/io/validk) for more examples and the [documentation](https://cosmin-marginean.github.io/validk/dokka/validk/validk/io.validk/index.html) for a full list of constraints.
 
 ## Context-aware and conditional validation
 Validk provides the ability to access the object being validated using the `withValue` construct.
@@ -116,3 +119,6 @@ validation<Person> {
     }
 }
 ```
+
+## Micronaut integration
+For a complete guide on integrating Validk with Micronaut please see the [reference documentation](https://github.com/cosmin-marginean/validk/wiki/Integrate-Validk-with-Micronaut).
