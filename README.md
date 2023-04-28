@@ -58,7 +58,7 @@ In other words, validation is successful when the response is `null`, or an inst
 Please check the [tests](https://github.com/cosmin-marginean/validk/tree/main/validk/src/test/kotlin/io/validk) for more examples and the [documentation](https://cosmin-marginean.github.io/validk/dokka/validk/validk/io.validk/index.html) for a full list of constraints.
 
 ## Eager errors
-It's often only required to return the first failure (failed constraint) message when validating a field. This particularly the case for displaying the user error in an application. But also when the order of the constraints implies the next one would fail: `isNotBlank()` failing implies `email()` will fail, but we first want to say "Email is required" rather than ["Email is required" and "This is not a valid email"].
+It's often only required to return the first failure (failed constraint) message when validating a field. This is usually the case when displaying user errors in an application and when the order of the constraints implies the next one would fail: `notBlank()` failing implies `email()` will fail, but we first want to respond with "Email is required" rather than ["Email is required", "This is not a valid email"].
 
 For this purpose `ValidationErrors` provides `eager*` versions of its properties, including `eagerErrors` and `eagerErrorMessages`. For a full list of properties please check the [ValiationErrors docs](https://cosmin-marginean.github.io/validk/dokka/validk/validk/io.validk/-validation-errors/index.html)
 
