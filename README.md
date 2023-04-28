@@ -1,4 +1,4 @@
-# validk
+# Validk
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/cosmin-marginean/validk)
 ![Coveralls](https://img.shields.io/coverallsCoverage/github/cosmin-marginean/validk)
 
