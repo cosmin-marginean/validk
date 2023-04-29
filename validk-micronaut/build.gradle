@@ -9,24 +9,8 @@ plugins {
     id "com.github.nbaztec.coveralls-jacoco" version "1.2.15"
 }
 
-repositories {
-    mavenCentral()
-}
-
-java {
-    withJavadocJar()
-    withSourcesJar()
-}
-
-javadocJar {
-    dependsOn(dokkaHtml)
-    archiveClassifier.set("javadoc")
-    from(dokkaHtml.outputDirectory)
-}
-
-dokkaHtml {
-    outputDirectory.set(file("../docs/dokka/${project.name}"))
-}
+ext.publishDescription = "A validation library for Kotlin (JVM)"
+apply from: '../publish.gradle'
 
 dependencies {
     implementation project(":validk")
@@ -55,6 +39,21 @@ kotlin {
     jvmToolchain(17)
 }
 
+java {
+    withJavadocJar()
+    withSourcesJar()
+}
+
+javadocJar {
+    dependsOn(dokkaHtml)
+    archiveClassifier.set("javadoc")
+    from(dokkaHtml.outputDirectory)
+}
+
+dokkaHtml {
+    outputDirectory.set(file("../docs/dokka/${project.name}"))
+}
+
 test {
     useJUnitPlatform()
     testLogging {
@@ -64,38 +63,12 @@ test {
     finalizedBy jacocoTestReport
 }
 
-publishing {
-    publications {
-        mavenJava(MavenPublication) {
-            from components.java
-            pom {
-                name = 'validk'
-                description = 'A validation framework for Kotlin'
-                url = 'https://github.com/cosmin-marginean/validk'
-                licenses {
-                    license {
-                        name = 'Apache License 2.0'
-                        url = 'https://github.com/cosmin-marginean/validk/blob/main/LICENSE'
-                        distribution = 'repo'
-                    }
-                }
-                scm {
-                    url = 'https://github.com/cosmin-marginean/validk'
-                    connection = 'scm:git:git://github.com/cosmin-marginean/validk.git'
-                    developerConnection = 'scm:git:ssh://git@github.com:cosmin-marginean/validk.git'
-                }
-                developers {
-                    developer {
-                        name = 'Cosmin Marginean'
-                    }
-                }
-            }
-        }
-    }
-}
-
 signing {
     sign publishing.publications.mavenJava
+}
+
+allOpen {
+    annotation("io.micronaut.http.annotation.Controller")
 }
 
 jacocoTestReport {
@@ -105,8 +78,4 @@ jacocoTestReport {
     }
 }
 
-allOpen {
-    annotation("io.micronaut.http.annotation.Controller")
-}
-
-tasks.withType(PublishToMavenRepository) { it.dependsOn test }
+tasks.publish.dependsOn(test)
