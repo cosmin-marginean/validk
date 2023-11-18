@@ -2,11 +2,11 @@ package io.validk
 
 interface ValidObject<T> {
 
-    fun validation(): Validation<T>
+    val validation: Validation<T>
 
     @Suppress("UNCHECKED_CAST")
     fun validate(): ValidationErrors? {
-        return validation().validate(this as T)
+        return validation.validate(this as T)
     }
 
     fun <R> validate(block: ValidationCheck<R>.() -> Unit): R {
@@ -22,8 +22,8 @@ interface ValidObject<T> {
 }
 
 class ValidationCheck<R>(
-        var onError: ((ValidationErrors) -> R)? = null,
-        var onSuccess: (() -> R)? = null
+    var onError: ((ValidationErrors) -> R)? = null,
+    var onSuccess: (() -> R)? = null
 ) {
     fun onError(onError: (ValidationErrors) -> R) {
         this.onError = onError

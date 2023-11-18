@@ -17,17 +17,10 @@ implementation "io.resoluteworks:validk:${validkVersion}"
 ## The basics
 
 ```kotlin
-data class Employee(
-    val name: String,
-    val email: String?
-)
+data class Employee(val name: String, val email: String?)
+data class Organisation(val name: String, val employees: List<Employee>)
 
-data class Organisation(
-    val name: String, val
-    employees: List<Employee>
-)
-
-val validation = validation<Organisation> {
+val validation = Validation {
     Organisation::name { minLength(5) }
     Organisation::employees each {
         Employee::name { minLength(10) }
@@ -38,7 +31,7 @@ val validation = validation<Organisation> {
 val org = Organisation(
     "A", listOf(
         Employee("John", "john@test.com"),
-        Employee("Hannah Johnson",  "hanna")
+        Employee("Hannah Johnson", "hanna")
     )
 )
 val errors = validation.validate(org)
@@ -73,7 +66,7 @@ private data class Entity(
 
 private enum class EntityType { COMPANY, PERSON }
 
-validation<Entity> {
+val validation: Validation<Entity> = Validation<Entity> {
     Entity::entityType { enum<EntityType>() }
     withValue { entity ->
         when (entity.entityType) {
@@ -86,13 +79,13 @@ validation<Entity> {
 
 Alternatively, you can add validation logic based on the value of a specific property using `whenIs`.
 ```kotlin
-val validation = validation<Entity> {
+val validation: Validation<Entity> = Validation {
     Entity::entityType { enum<EntityType>() }
-    
+
     Entity::entityType.whenIs("PERSON") {
         Entity::proofOfId { minLength(10) }
     }
-    
+
     Entity::entityType.whenIs("COMPANY") {
         Entity::registeredOffice { minLength(5) }
     }
@@ -103,11 +96,9 @@ val validation = validation<Entity> {
 `ValidObject` provides a basic mechanism for storing the validation logic within the object itself.
 ```kotlin
 data class MyObject(val name: String, val age: Int) : ValidObject<MyObject> {
-    override fun validation(): Validation<MyObject> {
-        return validation {
-            MyObject::name { notBlank() }
-            MyObject::age { min(18) }
-        }
+    override val validation: Validation<MyObject> = Validation {
+        MyObject::name { notBlank() }
+        MyObject::age { min(18) }
     }
 }
 
@@ -116,7 +107,7 @@ val result = MyObject("John Smith", 12).validate()
 
 ## Custom messages
 ```kotlin
-validation<Person> {
+Validation<Person> {
     Person::name {
         notBlank() message "A person needs a name"
         matches("[a-zA-Z\\s]+") message "Letters only please"

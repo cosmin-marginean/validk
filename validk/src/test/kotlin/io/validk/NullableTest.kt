@@ -6,7 +6,7 @@ import io.kotest.matchers.shouldBe
 class NullableTest : StringSpec({
 
     "validate if not null" {
-        val validation = validation<Person> {
+        val validation = Validation {
             Person::name { notBlank() }
             Person::email ifNotNull {
                 notBlank()
@@ -25,7 +25,7 @@ class NullableTest : StringSpec({
     }
 
     "cannot be null" {
-        val validation = validation<Person> {
+        val validation = Validation {
             Person::name { notBlank() }
             Person::email notNull {
                 email()
@@ -36,7 +36,7 @@ class NullableTest : StringSpec({
     }
 
     "cannot be null custom message" {
-        val validation = validation<Person> {
+        val validation = Validation {
             Person::name { notBlank() }
             Person::email.notNull("Please enter an email") {
                 email()

@@ -11,7 +11,6 @@ import io.validk.micronaut.internals.CustomErrorHandler
 import io.validk.micronaut.internals.paramAnnotatedWith
 import jakarta.inject.Singleton
 import kotlin.jvm.optionals.getOrElse
-import kotlin.reflect.full.*
 
 @Singleton
 @InterceptorBean(ValidBody::class)

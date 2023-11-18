@@ -6,7 +6,7 @@ import io.kotest.matchers.shouldBe
 class ConditionalValidation : StringSpec({
 
     "validate fields based on the value of the value of another field" {
-        val validation = validation<Entity> {
+        val validation = Validation<Entity> {
             Entity::entityType { enum<EntityType>() }
 
             withValue { entity ->
@@ -47,7 +47,7 @@ class ConditionalValidation : StringSpec({
     }
 
     "validate fields based on the value of the value of another field with whenIs" {
-        val validation = validation<Entity> {
+        val validation = Validation {
             Entity::entityType { enum<EntityType>() }
 
             Entity::entityType.whenIs("PERSON") {

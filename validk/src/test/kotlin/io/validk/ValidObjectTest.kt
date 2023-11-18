@@ -7,8 +7,8 @@ class ValidObjectTest : StringSpec({
 
     "valid object validation" {
         TestValidObject("", 12).validate() shouldBe errors(
-                ValidationError("name", "cannot be blank"),
-                ValidationError("age", "must be at least 18")
+            ValidationError("name", "cannot be blank"),
+            ValidationError("age", "must be at least 18")
         )
         TestValidObject("john smith ", 20).validate() shouldBe null
     }
@@ -29,19 +29,17 @@ class ValidObjectTest : StringSpec({
 }) {
 
     private data class TestValidObject(
-            val name: String,
-            val age: Int,
+        val name: String,
+        val age: Int,
     ) : ValidObject<TestValidObject> {
 
-        override fun validation(): Validation<TestValidObject> {
-            return validation {
-                TestValidObject::name {
-                    notBlank()
-                }
+        override val validation: Validation<TestValidObject> = Validation {
+            TestValidObject::name {
+                notBlank()
+            }
 
-                TestValidObject::age {
-                    min(18)
-                }
+            TestValidObject::age {
+                min(18)
             }
         }
     }

@@ -6,7 +6,7 @@ import io.kotest.matchers.shouldBe
 class ComplexNestingTest : StringSpec({
 
     "complex validation" {
-        val validation = validation<Organisation> {
+        val validation = Validation<Organisation> {
             Organisation::name { notBlank() }
             Organisation::employees each {
                 Employee::name { notBlank() }

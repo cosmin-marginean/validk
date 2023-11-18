@@ -5,17 +5,10 @@ import io.kotest.core.spec.style.StringSpec
 class Examples : StringSpec({
 
     "basic" {
-        data class Employee(
-            val name: String,
-            val email: String?
-        )
+        data class Employee(val name: String, val email: String?)
+        data class Organisation(val name: String, val employees: List<Employee>)
 
-        data class Organisation(
-            val name: String, val
-            employees: List<Employee>
-        )
-
-        val validation = validation<Organisation> {
+        val validation = Validation {
             Organisation::name { minLength(5) }
             Organisation::employees each {
                 Employee::name { minLength(10) }
@@ -35,11 +28,9 @@ class Examples : StringSpec({
 
     "valid object" {
         data class Person(val name: String, val email: String) : ValidObject<Person> {
-            override fun validation(): Validation<Person> {
-                return validation<Person> {
-                    Person::name { minLength(10) }
-                    Person::email { email() }
-                }
+            override val validation: Validation<Person> = Validation {
+                Person::name { minLength(10) }
+                Person::email { email() }
             }
         }
 
@@ -49,7 +40,7 @@ class Examples : StringSpec({
     "custom messages" {
         data class Person(val name: String)
 
-        validation<Person> {
+        Validation {
             Person::name {
                 notBlank() message "A person needs a name"
                 matches("[a-zA-Z\\s]+") message "Letters only please"
@@ -58,7 +49,7 @@ class Examples : StringSpec({
     }
 
     "context aware" {
-        val validation = validation<Entity> {
+        val validation: Validation<Entity> = Validation {
             Entity::entityType { enum<EntityType>() }
 
             Entity::entityType.whenIs("PERSON") {
@@ -72,7 +63,7 @@ class Examples : StringSpec({
     }
 
     "context aware - withValue" {
-        validation<Entity> {
+        Validation<Entity> {
             Entity::entityType { enum<EntityType>() }
             withValue { entity ->
                 when (entity.entityType) {
@@ -85,11 +76,9 @@ class Examples : StringSpec({
 
     "validation object" {
         data class MyObject(val name: String, val age: Int) : ValidObject<MyObject> {
-            override fun validation(): Validation<MyObject> {
-                return validation {
-                    MyObject::name { notBlank() }
-                    MyObject::age { min(18) }
-                }
+            override val validation: Validation<MyObject> = Validation {
+                MyObject::name { notBlank() }
+                MyObject::age { min(18) }
             }
         }
 
@@ -106,11 +95,9 @@ class Examples : StringSpec({
     private enum class EntityType { COMPANY, PERSON }
 
     private data class MyObject(val name: String, val age: Int) : ValidObject<MyObject> {
-        override fun validation(): Validation<MyObject> {
-            return validation {
-                MyObject::name { notBlank() }
-                MyObject::age { min(18) }
-            }
+        override val validation: Validation<MyObject> = Validation {
+            MyObject::name { notBlank() }
+            MyObject::age { min(18) }
         }
     }
 

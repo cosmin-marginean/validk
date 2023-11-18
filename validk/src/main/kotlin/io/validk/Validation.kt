@@ -128,19 +128,15 @@ class Validation<T>(
 
     companion object {
         const val DEFAULT_NULL_MESSAGE = "is required"
+
+        operator fun <T> invoke(init: Validation<T>.() -> Unit): Validation<T> {
+            val validation = Validation<T>()
+            return validation.apply(init)
+        }
     }
 }
 
 internal typealias DynamicValidation<T> = Validation<T>.(T) -> Unit
-
-inline fun <reified T> validation(init: Validation<T>.() -> Unit): Validation<T> {
-    val builder = Validation<T>()
-    return builder.apply(init)
-}
-
-inline fun <reified T> T.validate(init: Validation<T>.() -> Unit): ValidationErrors? {
-    return validation(init).validate(this)
-}
 
 fun List<ValidationError>.eagerErrors(): List<ValidationError> {
     return this.groupBy { it.propertyPath }

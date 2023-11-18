@@ -6,7 +6,7 @@ import io.kotest.matchers.shouldBe
 class NestedObjectTest : StringSpec({
 
     "nested object" {
-        val validation = validation<Person> {
+        val validation = Validation {
             Person::name { notBlank() }
             Person::address {
                 Address::city { notBlank() }
@@ -34,7 +34,7 @@ class NestedObjectTest : StringSpec({
     }
 
     "nested collection" {
-        val validation = validation<Parent> {
+        val validation = Validation<Parent> {
             Parent::name { notBlank() }
             Parent::children each {
                 Child::childName { notBlank() }
