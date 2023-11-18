@@ -1,3 +1,0 @@
-{% set formAction ="/users/create" %}
-{% set title ='Using @ValidBody(errorView="...")' %}
-{% include "layout-create-user" %}

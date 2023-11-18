@@ -1,3 +1,0 @@
-{% set formAction ="/users/create/custom-handler" %}
-{% set title ='Custom handler using @OnValidationErrors' %}
-{% include "layout-create-user" %}

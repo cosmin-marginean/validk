@@ -1,5 +1,0 @@
-micronaut:
-  views:
-    folder: views
-    pebble:
-      default-extension: peb
