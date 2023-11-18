@@ -6,25 +6,40 @@ import io.kotest.matchers.shouldBe
 class ValidObjectTest : StringSpec({
 
     "valid object validation" {
-        BasicValidObject("", 12).validate() shouldBe errors(
-            ValidationError("name", "cannot be blank"),
-            ValidationError("age", "must be at least 18")
+        TestValidObject("", 12).validate() shouldBe errors(
+                ValidationError("name", "cannot be blank"),
+                ValidationError("age", "must be at least 18")
         )
+        TestValidObject("john smith ", 20).validate() shouldBe null
+    }
+
+    "validation check" {
+        data class Result(val success: Boolean)
+
+        TestValidObject("", 12).validate {
+            onError { Result(false) }
+            onSuccess { Result(true) }
+        } shouldBe Result(false)
+
+        TestValidObject("John smith", 20).validate {
+            onError { Result(false) }
+            onSuccess { Result(true) }
+        } shouldBe Result(true)
     }
 }) {
 
-    private data class BasicValidObject(
-        val name: String,
-        val age: Int,
-    ) : ValidObject<BasicValidObject> {
+    private data class TestValidObject(
+            val name: String,
+            val age: Int,
+    ) : ValidObject<TestValidObject> {
 
-        override fun validation(): Validation<BasicValidObject> {
+        override fun validation(): Validation<TestValidObject> {
             return validation {
-                BasicValidObject::name {
+                TestValidObject::name {
                     notBlank()
                 }
 
-                BasicValidObject::age {
+                TestValidObject::age {
                     min(18)
                 }
             }
