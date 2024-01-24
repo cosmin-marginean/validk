@@ -46,6 +46,18 @@ class BasicPropertiesTest : StringSpec({
 
         Validation {
             Person::name {
+                notBlank()
+                matches("[a-zA-Z]+ [a-zA-Z]+")
+                minLength(100)
+            }
+            Person::age { min(18) }
+        }.validate(Person(name = "test", age = 23)) shouldBe errors(
+            // Second error gets picked up, but not the 3rd
+            ValidationError("name", "must match pattern [a-zA-Z]+ [a-zA-Z]+")
+        )
+
+        Validation {
+            Person::name {
                 matches("[a-zA-Z]+ [a-zA-Z]+")
                 notBlank()
             }

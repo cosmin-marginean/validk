@@ -95,7 +95,12 @@ class Validation<T>(
         val errors = mutableListOf<ValidationError>()
 
         if (failFast) {
-            constraints.firstOrNull()?.let { testConstraint(it, value, errors) }
+            run breaking@{
+                constraints.forEach { constraint ->
+                    testConstraint(constraint, value, errors)
+                    if (errors.size == 1) return@breaking
+                }
+            }
         } else {
             constraints.forEach { constraint ->
                 testConstraint(constraint, value, errors)
