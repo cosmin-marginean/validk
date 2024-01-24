@@ -18,7 +18,7 @@ implementation "io.resoluteworks:validk:${validkVersion}"
 data class Employee(val name: String, val email: String?)
 data class Organisation(val name: String, val employees: List<Employee>)
 
-val validation = Validation {
+val validation = Validation(failFast = false) {
     Organisation::name { minLength(5) }
     Organisation::employees each {
         Employee::name { minLength(10) }

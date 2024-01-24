@@ -5,7 +5,8 @@ import kotlin.reflect.KProperty1
 class Validation<T>(
     private val propertyPath: String? = null,
     private val nullMessage: String = DEFAULT_NULL_MESSAGE,
-    private val checksCollectionElements: Boolean = false
+    private val checksCollectionElements: Boolean = false,
+    private val failFast: Boolean = true
 ) {
     private val constraints = mutableListOf<Constraint<T>>()
     private val childValidations = mutableMapOf<KProperty1<T, Any?>, Validation<Any>>()
@@ -32,7 +33,7 @@ class Validation<T>(
         nullMessage: String = DEFAULT_NULL_MESSAGE,
         checksCollectionElements: Boolean = false,
     ): Validation<E> {
-        val validation = Validation<E>(propertyPath.plusChildProperty(property.name), nullMessage, checksCollectionElements)
+        val validation = Validation<E>(propertyPath.plusChildProperty(property.name), nullMessage, checksCollectionElements, failFast)
         init(validation)
         childValidations[property] = validation as Validation<Any>
         return validation
@@ -93,15 +94,16 @@ class Validation<T>(
 
         val errors = mutableListOf<ValidationError>()
 
-        constraints.forEach { constraint ->
-            if (!constraint.test(value)) {
-                val property = propertyPath ?: "Object"
-                errors.add(ValidationError(property, constraint.errorMessage))
+        if (failFast) {
+            constraints.firstOrNull()?.let { testConstraint(it, value, errors) }
+        } else {
+            constraints.forEach { constraint ->
+                testConstraint(constraint, value, errors)
             }
         }
 
         if (dynamicValidations.isNotEmpty()) {
-            val dynamicValidation = Validation<T>(propertyPath)
+            val dynamicValidation = Validation<T>(propertyPath = propertyPath, failFast = failFast)
             dynamicValidations.forEach { valueValidation ->
                 valueValidation(dynamicValidation, value)
             }
@@ -126,11 +128,22 @@ class Validation<T>(
         }
     }
 
+    private fun testConstraint(
+        constraint: Constraint<T>,
+        value: T,
+        errors: MutableList<ValidationError>
+    ) {
+        if (!constraint.test(value)) {
+            val property = propertyPath ?: "Object"
+            errors.add(ValidationError(property, constraint.errorMessage))
+        }
+    }
+
     companion object {
         const val DEFAULT_NULL_MESSAGE = "is required"
 
-        operator fun <T> invoke(init: Validation<T>.() -> Unit): Validation<T> {
-            val validation = Validation<T>()
+        operator fun <T> invoke(failFast: Boolean = true, init: Validation<T>.() -> Unit): Validation<T> {
+            val validation = Validation<T>(failFast = failFast)
             return validation.apply(init)
         }
     }
