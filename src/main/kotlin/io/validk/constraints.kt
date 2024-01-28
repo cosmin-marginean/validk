@@ -18,7 +18,7 @@ fun <R : Number> Validation<R>.maxExclusive(maxValue: Number) = addConstraint("m
     it.toDouble() < maxValue.toDouble()
 }
 
-fun Validation<String>.notEmpty() = addConstraint("cannot be empty") {
+fun Validation<String>.notEmptyString() = addConstraint("cannot be empty") {
     it.isNotEmpty()
 }
 
@@ -48,7 +48,7 @@ fun Validation<String>.matches(pattern: String) = matches(pattern.toRegex())
 
 fun Validation<String>.email() = matches(REGEX_EMAIL) message "must be a valid email"
 
-fun Validation<out Collection<*>>.notEmptyCollection() = addConstraint("cannot be empty") {
+fun Validation<out Collection<*>>.notEmpty() = addConstraint("cannot be empty") {
     it.isNotEmpty()
 }
 

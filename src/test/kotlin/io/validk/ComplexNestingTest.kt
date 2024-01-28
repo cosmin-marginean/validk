@@ -15,7 +15,7 @@ class ComplexNestingTest : StringSpec({
                 Employee::roles each {
                     Role::name { enum("DIRECTOR", "EMPLOYEE") }
                     Role::types {
-                        notEmptyCollection()
+                        notEmpty()
                     }
                 }
                 Employee::address {

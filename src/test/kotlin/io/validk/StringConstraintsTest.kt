@@ -7,9 +7,9 @@ import io.kotest.matchers.shouldNotBe
 class StringConstraintsTest : StringSpec({
 
     "notEmpty" {
-        Validation { notEmpty() }.validate("abc") shouldBe null
-        Validation { notEmpty() }.validate("  ") shouldBe null
-        Validation { notEmpty() }.validate("") shouldNotBe null
+        Validation { this.notEmptyString() }.validate("abc") shouldBe null
+        Validation { this.notEmptyString() }.validate("  ") shouldBe null
+        Validation { this.notEmptyString() }.validate("") shouldNotBe null
     }
 
     "notBlank" {

@@ -48,6 +48,15 @@ class Validation<T>(
         }
     }
 
+    fun <E> KProperty1<T, Collection<E>>.whenContains(value: E, block: Validation<T>.(T) -> Unit) {
+        val property = this
+        dynamicValidations.add {
+            if (property.get(it).contains(value)) {
+                block(it)
+            }
+        }
+    }
+
     infix fun <R> KProperty1<T, R?>.ifNotNull(block: Validation<R>.() -> Unit) {
         val property = this
         dynamicValidations.add {

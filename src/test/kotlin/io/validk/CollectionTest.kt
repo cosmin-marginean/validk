@@ -7,8 +7,8 @@ import io.kotest.matchers.shouldNotBe
 class CollectionTest : StringSpec({
 
     "empty, min/max size" {
-        Validation<List<String>> { notEmptyCollection() }.validate(emptyList()) shouldNotBe null
-        Validation<List<String>> { notEmptyCollection() }.validate(listOf("AA")) shouldBe null
+        Validation<List<String>> { notEmpty() }.validate(emptyList()) shouldNotBe null
+        Validation<List<String>> { notEmpty() }.validate(listOf("AA")) shouldBe null
 
         Validation<List<String>> { minSize(2) }.validate(listOf("AA")) shouldNotBe null
         Validation<List<String>> { minSize(2) }.validate(listOf("AA", "BB")) shouldBe null
